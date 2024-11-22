@@ -160,10 +160,10 @@ public class MainView {
             address = scanner.nextLine();
         }
 
-        System.out.println("Nhập ngày sinh (định dạng dd/MM/yyyy)");
+        System.out.println("Nhập ngày sinh (định dạng yyyy-MM-dd)");
         String birthday = scanner.nextLine();
         while (birthday.isEmpty() || !isValidDate(birthday)) {
-            System.out.println("Ngày sinh không được để rỗng và phải đúng định dạng dd/MM/yyyy");
+            System.out.println("Ngày sinh không được để rỗng và phải đúng định dạng yyyy-MM-dd");
             System.out.println("Nhập lại ngày sinh của bạn");
             birthday = scanner.nextLine();
         }
@@ -186,7 +186,7 @@ public class MainView {
     }
 
     public static boolean isValidDate(String dateStr) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         sdf.setLenient(false);  // Tắt chế độ "lỏng lẻo" của SimpleDateFormat
         try {
             Date date = sdf.parse(dateStr);  // Thử parse ngày
